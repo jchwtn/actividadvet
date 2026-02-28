@@ -5,7 +5,6 @@ public class Mascota {
     private int edad;
     private double peso;
     private boolean saludable;
-    private int opc;
 
     public Mascota(String nombre, String especie, int edad, double peso, boolean saludable) {
         this.nombre = nombre;
@@ -15,29 +14,46 @@ public class Mascota {
         this.saludable = saludable;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getEspecie() {
+        return especie;
     }
 
     public void setEspecie(String especie) {
         this.especie = especie;
     }
 
+    public int getEdad() {
+        return edad;
+    }
+
     public void setEdad(int edad) {
         this.edad = edad;
+    }
+
+    public double getPeso() {
+        return peso;
     }
 
     public void setPeso(double peso) {
         this.peso = peso;
     }
 
+    public boolean isSaludable() {
+        return saludable;
+    }
+
     public void setSaludable(boolean saludable) {
         this.saludable = saludable;
     }
 
-    public void setOpc(int opc) {
-        this.opc = opc;
-    }
 
     @Override
     public String toString() {
@@ -47,40 +63,34 @@ public class Mascota {
                 ", edad=" + edad +
                 ", peso=" + peso +
                 ", saludable=" + saludable +
-                ", opc=" + opc +
                 '}';
     }
 
     //CUMPLIR AÑOS
-    public int cumplirAnos (int edad){
-
-        int edadIn = 0;
-        return edadIn + edad;
+    public int cumplirAnos(int nuevaEdad){
+        this.edad = nuevaEdad;
+        return nuevaEdad;
     }
 
     //ENGORDAR
-    public double engordar (int peso){
-
-        double pesoIn = 0;
-        return pesoIn + peso;
+    public double engordar(double cantidad){
+        this.peso += cantidad;
+        return cantidad;
     }
 
     //ADELGAZAR
-    public double adelgazar (int peso){
-
-        double pesoIn = 0;
-        return pesoIn - peso;
+    public double adelgazar(double cantidad){
+        this.peso -= cantidad;
+        return cantidad;
     }
 
     //ENFERMAR
-    public boolean enfermar (){
-        saludable = true;
-        return true;
+    public void enfermar (){
+        saludable = false;
     }
 
-    public boolean recuperarSalud (){
-        saludable = false;
-        return false;
+    public void recuperarSalud (){
+        saludable = true;
     }
 
     //Mostar ficha
